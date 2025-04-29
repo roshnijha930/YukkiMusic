@@ -45,21 +45,19 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logs = logging.getLogger()
 
 
+# Config Variables
 if os.path.exists("config.env"):
     load_dotenv("config.env")
 
-# REQUIRED VARIABLES
 API_ID = int(getenv("API_ID", 0))
 API_HASH = getenv("API_HASH", None)
 BOT_TOKEN = getenv("BOT_TOKEN", None)
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
 STRING_SESSION = getenv("STRING_SESSION", None)
 MONGO_DB_URL = getenv("MONGO_DB_URL", None)
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "7009601543").split()))
 OWNER_ID = int(getenv("OWNER_ID", 0))
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
-
-
-# OPTIONAL VARIABLES
-START_IMAGE_URL = getenv("START_IMAGE_URL", "https://graph.org/file/918101d0ad6b1207e6201.png")
+START_IMAGE_URL = getenv("START_IMAGE_URL", None)
 
 
 app = Client("App", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
