@@ -49,7 +49,7 @@ logs = logging.getLogger()
 if os.path.exists("config.env"):
     load_dotenv("config.env")
 
-API_ID = int(getenv("API_ID", ""))
+API_ID = int(getenv("API_ID", 25742938))
 API_HASH = getenv("API_HASH", None)
 BOT_TOKEN = getenv("BOT_TOKEN", None)
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
