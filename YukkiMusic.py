@@ -379,7 +379,7 @@ def random_color():
 async def create_thumbnail(results, user_id):
     try:
         vidid = results.get("id")
-        title = re.sub("\W+", " ", results.get("title", "")).title()
+        title = re.sub(r"\W+", " ", results.get("title", "")).title()
         duration = format_seconds(results.get("duration", 0))
         views = f"{format_views(results.get('views', 0))} Views"
         channel = results.get("channel", "Unknown")
